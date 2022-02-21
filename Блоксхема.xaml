@@ -49,6 +49,7 @@
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -110,7 +111,7 @@
           <av:Size x:Key="ShapeSize">228,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap:VirtualizedContainerService.HintSize="704,3149" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <Sequence sap:VirtualizedContainerService.HintSize="704,3268" sap2010:WorkflowViewState.IdRef="Sequence_11">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtData" />
         </Sequence.Variables>
@@ -120,25 +121,25 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="662,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="site.xlsx" />
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="662,2806" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="662,2925" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,2686" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,2805" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="586,2594" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="[currentrow.item(&quot;URL&quot;).tostring]">
+                <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="586,2713" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="[currentrow.item(&quot;URL&quot;).tostring]">
                   <ui:OpenBrowser.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,2493" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,2612" sap2010:WorkflowViewState.IdRef="Sequence_14">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="sd:DataTable" Name="dtData" />
                         </Sequence.Variables>
@@ -148,13 +149,13 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:MaximizeWindow Window="{x:Null}" ContinueOnError="True" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="510,2339" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="Caption.xlsx">
+                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="510,2458" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="Caption.xlsx">
                           <ui:ExcelApplicationScope.Body>
                             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Сделать" sap:VirtualizedContainerService.HintSize="476,2230" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <Sequence DisplayName="Сделать" sap:VirtualizedContainerService.HintSize="476,2349" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="Photo" />
                                   <Variable x:TypeArguments="sd:DataTable" Name="Caption" />
@@ -172,28 +173,24 @@
                                     </InArgument>
                                   </ui:ExcelReadRange.Range>
                                 </ui:ExcelReadRange>
-                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[caption]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,2039" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Caption]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,1893" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
                                   <ui:ForEachRow.Body>
                                     <ActivityAction x:TypeArguments="sd:DataRow">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1920" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                                        <Sequence.Variables>
-                                          <Variable x:TypeArguments="ui:Image" Name="image" />
-                                          <Variable x:TypeArguments="x:String" Name="path" />
-                                        </Sequence.Variables>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1774" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Caption" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[row]">
+                                        <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Caption" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[Row]">
                                           <ui:GetRowItem.Value>
                                             <OutArgument x:TypeArguments="x:String">[post1]</OutArgument>
                                           </ui:GetRowItem.Value>
                                         </ui:GetRowItem>
-                                        <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Photo" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="GetRowItem_5" Row="[row]">
+                                        <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Photo" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="GetRowItem_5" Row="[Row]">
                                           <ui:GetRowItem.Value>
                                             <OutArgument x:TypeArguments="x:String">[photo]</OutArgument>
                                           </ui:GetRowItem.Value>
@@ -349,11 +346,12 @@
                                           </ui:SendHotkey.Target>
                                         </ui:SendHotkey>
                                         <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                                        <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" ContinueOnError="True" DisplayName="Close Window 'chrome.exe Новая'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseWindow_2" InformativeScreenshot="df3f9df7fd457124a837ae7a1316536b" WaitForReady="INTERACTIVE" />
                                       </Sequence>
                                     </ActivityAction>
                                   </ui:ForEachRow.Body>
                                 </ui:ForEachRow>
+                                <ui:ClearDataTable DataTable="[Caption]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="ClearDataTable_2" />
+                                <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" ContinueOnError="True" DisplayName="Close Window 'chrome.exe Новая'" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="CloseWindow_2" InformativeScreenshot="df3f9df7fd457124a837ae7a1316536b" WaitForReady="INTERACTIVE" />
                               </Sequence>
                             </ActivityAction>
                           </ui:ExcelApplicationScope.Body>
